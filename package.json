@@ -1,0 +1,37 @@
+{
+  "name": "redis-desktop",
+  "author": {
+    "name": "杨永鑫",
+    "email": "3271310698@qq.com",
+    "url": "https://github.com/YX916"
+  },
+  "description": "Redis Desktop",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "electron:serve": "vue-cli-service electron:serve --mode development",
+    "electron:build": "vue-cli-service electron:build --mode production"
+  },
+  "main": "background.js",
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "ant-design-vue": "^4.1.1",
+    "electron-json-storage": "^4.6.0",
+    "ioredis": "^5.3.2",
+    "vue": "^3.4.15"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "electron": "^25.9.8",
+    "less": "^4.2.0",
+    "less-loader": "^12.1.0",
+    "vue-cli-plugin-electron-builder": "~2.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
