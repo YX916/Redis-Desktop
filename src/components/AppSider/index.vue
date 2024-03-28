@@ -1,37 +1,36 @@
 <template>
-    <div class="app-sider" :style="{ width: style.width + 'px' }">
-        <div class="sider-content" @click="te">
-
+    <div class="app-sider" :style="{ width: dargStyle.width + 'px' }">
+        <div class="sider-content">
+            <div class="aider-top-add" @click="$refs.newConnectionModal.open = true">
+                <icon type="icon:add-circle" />
+                <span style="margin-left: 8px;">连接到Redis服务器</span>
+            </div>
         </div>
-        <div class="app-sider-drag-line" v-drag="style"></div>
+        <div class="app-sider-drag-line" v-drag="dargStyle"></div>
     </div>
+    <!-- 连接到新服务器弹窗 -->
+    <new-connection-modal ref="newConnectionModal" />
 </template>
 <script>
-const Redis = require("ioredis");
-const redis = new Redis({
-    port: 6379, // Redis port
-    host: "127.0.0.1", // Redis host
-    password: "root",
-    db: 1, // Defaults to 0
-});
+import { defineAsyncComponent } from 'vue';
 export default {
     name: 'AppSider',
-
+    components: {
+        NewConnectionModal: defineAsyncComponent(() =>
+            import(/* webpackChunkName:'newConnectionModal' */ '@/components/NewConnectionModal')
+        ),
+    },
     data() {
         return {
-            style: {
+            dargStyle: {
                 width: this.$storage.get('siderWidth') || 350,
-                minWidth: 200,
-                maxWidth: 500
+                minWidth: 250,
+                maxWidth: 600
             }
         };
     },
     methods: {
-        te() {
-            redis.info("keyspace").then((result) => {
-                console.log(result); // Prints "value"
-            });
-        }
+
     }
 }
 </script>
@@ -46,6 +45,22 @@ export default {
     .sider-content {
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .aider-top-add {
+            width: 100%;
+            height: 36px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            &:hover {
+                background-color: #F0F0F2;
+            }
+        }
     }
 
     .app-sider-drag-line {

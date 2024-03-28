@@ -13,7 +13,7 @@
 			"script": "electron:build",
 			"group": "build",
 			"problemMatcher": [],
-			"label": "打包",
+			"label": "构建",
 			"detail": "vue-cli-service electron:build --mode production"
 		}
 	]

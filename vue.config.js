@@ -1,4 +1,5 @@
-const version = require("./package.json").version
+const version = require("./package.json").version;
+const path = require('path');
 const productName = `Redis Desktop`;
 module.exports = {
     publicPath: './',

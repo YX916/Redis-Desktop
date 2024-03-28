@@ -19,7 +19,7 @@ export default {
       zhCN: zhCN,
       theme: {
         token: {
-          borderRadius: 4
+          borderRadius: 3
         }
       }
     }

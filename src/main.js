@@ -5,12 +5,14 @@ import 'ant-design-vue/dist/reset.css';
 import { message } from 'ant-design-vue';
 import Component from '@/components';
 import directives from '@/directives'
-import storage from '@/util/storage'
+import storage from '@/util/storage';
+import Icon from '@/icon';
 
 let app = createApp(App);
 app.use(Antd);
-directives(app)
-Component(app)
+directives(app);
+Component(app);
+Icon(app);
 
 message.config({
     top: 60
