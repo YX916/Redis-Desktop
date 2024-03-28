@@ -16,12 +16,13 @@
   "dependencies": {
     "@electron/remote": "^2.1.2",
     "ant-design-vue": "^4.1.1",
-    "electron-json-storage": "^4.6.0",
     "ioredis": "^5.3.2",
-    "vue": "^3.4.15"
+    "vue": "^3.4.15",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-plugin-vuex": "^5.0.8",
     "@vue/cli-service": "~5.0.8",
     "electron": "^25.9.8",
     "less": "^4.2.0",

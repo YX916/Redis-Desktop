@@ -5,6 +5,9 @@
                 <icon type="icon:add-circle" />
                 <span style="margin-left: 8px;">连接到Redis服务器</span>
             </div>
+            <div class="connection-list-wrap">
+
+            </div>
         </div>
         <div class="app-sider-drag-line" v-drag="dargStyle"></div>
     </div>
@@ -60,6 +63,13 @@ export default {
             &:hover {
                 background-color: #F0F0F2;
             }
+        }
+
+        .connection-list-wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex: 1;
         }
     }
 

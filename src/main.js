@@ -7,8 +7,10 @@ import Component from '@/components';
 import directives from '@/directives'
 import storage from '@/util/storage';
 import Icon from '@/icon';
+import store from './store';
 
 let app = createApp(App);
+app.use(store);
 app.use(Antd);
 directives(app);
 Component(app);

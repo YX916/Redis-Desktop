@@ -64,7 +64,11 @@ export default {
         /* 提交 */
         handleOk() {
             this.$refs.optionsForm.validateFields().then(() => {
-                console.log(this.options);
+                let options = Object.assign({}, this.options)
+                options.ssl = options.security && options.security.includes('ssl') ? true : false;
+                options.ssh = options.security && options.security.includes('ssh') ? true : false;
+                delete options.security;
+                this.$store.commit('Connection/ADD_CONNECTION', options);
             }).catch(() => { })
         }
     },
